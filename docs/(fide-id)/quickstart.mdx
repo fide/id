@@ -1,0 +1,60 @@
+---
+title: Quickstart
+description: Install the SDK and derive your first Fide ID.
+---
+
+## Install
+
+```bash
+pnpm add @fide-work/id
+```
+
+## Calculate A Fide ID
+
+```ts
+import { calculateFideId } from "@fide-work/id";
+
+const fideId = await calculateFideId({
+  entityType: "Person",
+  referenceType: "NetworkResource",
+  referenceIdentifier: "https://orcid.org/0000-0002-1825-0097",
+});
+```
+
+## Parse A Fide ID
+
+```ts
+import { parseFideId } from "@fide-work/id";
+
+const parsed = parseFideId(
+  "did:fide:0x10205fcbdc6d73bcfcd2c73eb4795c2f02f1d1c1",
+);
+```
+
+## Normalize Inputs First
+
+Fide IDs are deterministic. If two systems hash different string forms, they will derive different Fide IDs.
+
+Use `normalizeReferenceIdentifier(...)` before deriving IDs from URL-like inputs:
+
+```ts
+import {
+  calculateFideId,
+  normalizeReferenceIdentifier,
+} from "@fide-work/id";
+
+const referenceIdentifier = normalizeReferenceIdentifier(
+  "HTTPS://Example.com:443/alice",
+);
+
+const fideId = await calculateFideId({
+  entityType: "Person",
+  referenceType: "NetworkResource",
+  referenceIdentifier,
+});
+```
+
+## Next Steps
+
+- See [Specification](/id/specification) for the `did:fide` method.
+- See [JavaScript SDK](/id/sdk/javascript) for the full SDK reference.

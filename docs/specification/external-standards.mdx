@@ -1,0 +1,30 @@
+---
+title: External Standards
+description: External standards used by the did:fide method.
+---
+
+The `did:fide` method relies on a small set of external standards for DID syntax, text encoding, hashing, and URI syntax.
+
+### DID [#did]
+
+[DID Core](https://www.w3.org/TR/did-core/) defines the model and syntax used by this method.
+
+- MUST use DID Core for [`Fide ID Format`](/id/specification/syntax#fide-id-syntax), including [`Prefix`](/id/specification/syntax#prefix).
+
+### UTF-8 [#utf-8]
+
+[RFC 3629](https://www.rfc-editor.org/rfc/rfc3629) defines the UTF-8 text encoding used by this method.
+
+- MUST use UTF-8 before hashing the [`Reference Identifier`](/id/specification/syntax#reference-identifier).
+
+### SHA-256 [#sha-256]
+
+[FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final) defines the SHA-256 hashing algorithm used by this method.
+
+- MUST use SHA-256 to derive the [`Reference Fingerprint`](/id/specification/syntax#reference-fingerprint).
+
+### URI [#uri]
+
+[RFC 3986](https://www.rfc-editor.org/rfc/rfc3986) defines the URI syntax used by [`NetworkResource`](/vocabulary/definitions/network-resource#as-reference-type) reference identifiers.
+
+- MUST use URI syntax for [`NetworkResource`](/vocabulary/definitions/network-resource#as-reference-type) reference identifiers.

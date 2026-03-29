@@ -1,0 +1,20 @@
+---
+title: Overview
+description: Introduction to the Fide ID DID method.
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+Fide ID gives entities stable, portable identifiers.
+
+It is designed for identification, not control. A Fide ID identifies an entity from declared type information and a reference identifier, but it does not by itself prove authorship, authority, or ownership.
+Fide ID is normative for identifier mechanics (shape, parsing, normalization, and validation flow), while [Fide Vocabulary](/vocabulary) is normative for valid entity types, valid reference types, and allowed entity-type/reference-type combinations.
+
+<Callout title="DID Specification">
+  See [Specification](/id/specification) for the `did:fide` method in compliance with [DID](https://www.w3.org/TR/did-core/).
+</Callout>
+
+## Fide Ecosystem Alignment
+
+- [Fide Vocabulary](/vocabulary) defines the entity types and per-entity identifier constraints used by Fide ID
+- [Fide Context Protocol](/fcp) uses Fide ID as its identifier method for statements and graph data

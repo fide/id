@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "pages": [
+    "index",
+    "--- Method ---",
+    "syntax",
+    "resolution",
+    "did-document",
+    "operations",
+    "--- References ---",
+    "external-standards",
+    "--- Considerations ---",
+    "security",
+    "privacy"
+  ]
+}

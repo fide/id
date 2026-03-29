@@ -1,0 +1,34 @@
+---
+title: Resolution
+description: Deterministic resolution rules for did:fide identifiers.
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+Resolution expands a valid Fide ID into a DID Document using method rules alone.
+
+Fide ID resolution does not require registry lookup.
+
+<Callout title="Identification Only">
+  As outlined in [Security](/id/specification/security) and [Privacy](/id/specification/privacy), resolution does not by itself prove control, authorship, authority, or ownership.
+</Callout>
+
+## Requirements
+
+### Resolution Process
+
+Any implementation that resolves Fide IDs MUST:
+
+- parse the method-specific identifier
+- validate the Fide ID shape
+- extract the [Entity Type](/id/specification/syntax#entity-type), [Reference Type](/id/specification/syntax#reference-type), and [Reference Fingerprint](/id/specification/syntax#reference-fingerprint) segments
+- return the DID Document defined by this method
+
+### Resolution Output
+
+A successful resolution result SHOULD include:
+
+- the resolved DID Document
+- any method metadata required by DID resolution conventions
+
+A failed resolution result MUST indicate why the Fide ID is invalid when the input does not conform to the method syntax.

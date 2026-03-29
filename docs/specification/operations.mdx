@@ -1,0 +1,24 @@
+---
+title: Operations
+description: Supported did:fide method operations.
+---
+
+## Create
+
+Create derives a Fide ID deterministically from its required parts.
+
+Any implementation that creates a Fide ID MUST:
+
+- validate the [Entity Type](/id/specification/syntax#entity-type), [Reference Type](/id/specification/syntax#reference-type), and [Reference Identifier](/id/specification/syntax#reference-identifier) against this specification
+- derive the [Reference Fingerprint](/id/specification/syntax#reference-fingerprint) from the [Reference Identifier](/id/specification/syntax#reference-identifier)
+- assemble the final DID string
+
+
+## Read
+
+Read resolves a valid Fide ID into the DID Document defined by this method.
+
+## Operations Not Supported by This Method
+
+- Update: Fide IDs are derived, not mutable registry entries.
+- Deactivate: Fide ID does not define mutable method state.

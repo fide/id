@@ -1,0 +1,30 @@
+---
+title: DID Document
+description: DID Document shape for Fide ID resolution.
+---
+
+This page shows the JSON DID Document form described in [DID Core §6.2 JSON](https://www.w3.org/TR/did-core/#json).
+
+- `@context`
+- `id`
+
+```json
+{
+  "@context": ["https://www.w3.org/ns/did/v1"],
+  "id": "did:fide:0x..."
+}
+```
+
+## DID Document Fields Not Defined by This Method
+
+The following common DID Document fields are not defined by Fide ID:
+
+- `verificationMethod`
+- `authentication`
+- `assertionMethod`
+- `keyAgreement`
+- `capabilityDelegation`
+- `capabilityInvocation`
+- `service`
+- `controller`
+

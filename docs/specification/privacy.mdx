@@ -1,0 +1,11 @@
+---
+title: Privacy
+description: Privacy considerations for the Fide ID method.
+---
+
+Fide ID is designed for stable identification, not confidentiality.
+
+- The [Reference Fingerprint](/id/specification/syntax#reference-fingerprint) is not intended to provide secrecy or confidentiality.
+- If a [Reference Identifier](/id/specification/syntax#reference-identifier) comes from a predictable or guessable space, it may be possible to derive the same Fide ID by recomputing the fingerprint.
+- Because Fide IDs are deterministic, they can enable correlation of the same entity across systems.
+- Implementations and applications SHOULD avoid treating Fide IDs as privacy-preserving identifiers.

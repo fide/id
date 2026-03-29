@@ -1,0 +1,52 @@
+---
+title: Syntax
+description: Fide ID identifier syntax and core rules for the did:fide method.
+---
+
+**Fide ID Shape:** `did:fide:0x{entityType}{referenceType}{referenceFingerprint}`
+
+- MUST be exactly 51 characters long.
+
+The `method-specific-id` MUST be `0x{entityType}{referenceType}{referenceFingerprint}`.
+
+Valid [Entity Type](#entity-type) and [Reference Type](#reference-type) codes, and entity-specific constraints on their use, are defined by the [Fide Vocabulary](/vocabulary).
+
+### Normative Dependencies [#normative-dependencies]
+
+- This specification is normative for identifier syntax and validation mechanics.
+- [Fide Vocabulary](/vocabulary) is normative for valid entity types, valid reference types, and allowed entity-type/reference-type combinations.
+
+### Prefix [#prefix]
+Declares that the identifier is a DID using the Fide method namespace.
+
+- MUST start with `did:fide:0x` in compliance with [DID](https://www.w3.org/TR/did-core/).
+
+### Entity Type [#entity-type]
+
+Defines what kind of entity is being identified.
+
+- MUST use a valid 2-character hexadecimal [Fide Entity Type Code](/vocabulary).
+
+### Reference Type [#reference-type]
+
+Defines what kind of [Reference Identifier](#reference-identifier) the identifier is derived from.
+
+- MUST use a valid 2-character hexadecimal [Fide Reference Type Code](/vocabulary).
+
+### Reference Fingerprint [#reference-fingerprint]
+
+Defines the fingerprint the [Reference Identifier](#reference-identifier) is derived from.
+
+- MUST derive by [UTF-8](https://www.rfc-editor.org/rfc/rfc3629) encoding the [Reference Identifier](#reference-identifier), hashing it with [SHA-256](https://csrc.nist.gov/publications/detail/fips/180/4/final), and using the first 36 hexadecimal characters.
+
+### Reference Identifier [#reference-identifier]
+
+Defines the identifier value used as the reference input.
+
+- MUST be a string identifier.
+- MUST match the declared [Reference Type](#reference-type).
+- SHOULD uniquely identify the declared [Entity Type](#entity-type) when interpreted with the declared [Reference Type](#reference-type).
+
+<Callout title="Multiple Valid Fide IDs">
+  A single Fide ID SHOULD identify one entity, but a single entity can still have multiple valid Fide IDs when it can be identified by multiple valid [Reference Identifiers](#reference-identifier).
+</Callout>

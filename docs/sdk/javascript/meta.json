@@ -1,0 +1,21 @@
+{
+  "title": "SDK",
+  "description": "Generated SDK reference",
+  "root": true,
+  "icon": "Box",
+  "pages": [
+    "index",
+    "--- Validation and Parsing ---",
+    "assert-fide-id",
+    "build-fide-id-from-parts",
+    "parse-fide-id",
+    "--- Calculation ---",
+    "calculate-fide-id",
+    "calculate-statement-fide-id",
+    "--- Normalization ---",
+    "normalize-predicate-reference-identifier",
+    "normalize-reference-identifier",
+    "--- Statement ---",
+    "build-statement-reference-identifier"
+  ]
+}
