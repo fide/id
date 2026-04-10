@@ -47,6 +47,10 @@ Defines the identifier value used as the reference input.
 - MUST match the declared [Reference Type](#reference-type).
 - SHOULD uniquely identify the declared [Entity Type](#entity-type) when interpreted with the declared [Reference Type](#reference-type).
 
+<Callout title="Avoid Ambiguous References">
+  If a public identifier could validly refer to multiple distinct entities you may want to model separately, it SHOULD NOT be reused for all of them. Use a more specific public identifier when available, or define a declared or derived entity when you need a more precise referent than the public identifier can uniquely provide.
+</Callout>
+
 <Callout title="Multiple Valid Fide IDs">
   A single Fide ID SHOULD identify one entity, but a single entity can still have multiple valid Fide IDs when it can be identified by multiple valid [Reference Identifiers](#reference-identifier).
 </Callout>
